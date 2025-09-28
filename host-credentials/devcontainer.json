@@ -1,0 +1,10 @@
+{
+    "name": "Claude Code with Host Credentials",
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "mounts": [
+        // use host credentials for claude code
+        "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.claude.json,target=/home/vscode/.claude.json,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.claude.json.backup,target=/home/vscode/.claude.json.backup,type=bind,consistency=cached"
+    ]
+}
