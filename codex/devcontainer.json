@@ -1,0 +1,20 @@
+{
+    "name": "codex",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "mounts": [
+        // Persist history across rebuilds
+        "source=ds-ab-curriculum-builder-codex-${devcontainerId},target=/home/vscode/.codex,type=volume",
+        // Share credentials and global prompts from the host OS
+        "source=${localEnv:HOME}/.codex/auth.json,target=/home/vscode/.codex/auth.json,type=bind,ro,consistency=cached",
+        "source=${localEnv:HOME}/.codex/AGENTS.md,target=/home/vscode/.codex/AGENTS.md,type=bind,consistency=cached"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "openai.chatgpt"
+            ]
+        }
+    }
+}
