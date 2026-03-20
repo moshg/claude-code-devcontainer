@@ -4,6 +4,9 @@
         "dockerfile": "Dockerfile"
     },
     "mounts": [
+        // persist claude config per-devcontainer (settings, cache, etc.)
+        // first creation: empty volume → image's ~/.claude/ contents are copied in (copy-on-first-mount)
+        // rebuild: volume already has data → image contents are ignored, previous data is preserved
         "source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume"
     ]
 }

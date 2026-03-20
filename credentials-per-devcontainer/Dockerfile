@@ -5,7 +5,7 @@ USER vscode
 # install claude code
 RUN curl -fsSL https://claude.ai/install.sh | bash
 
-# move and link claude config files to mount all claude config files
+# move and link claude config files for persistence in mounted volume
 RUN mv /home/vscode/.claude.json /home/vscode/.claude/settings.json && \
     mv /home/vscode/.claude.json.backup /home/vscode/.claude/settings.json.backup && \
     ln -s /home/vscode/.claude/settings.json /home/vscode/.claude.json && \
