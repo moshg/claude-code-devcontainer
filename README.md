@@ -8,4 +8,4 @@ A minimal [development container](https://code.visualstudio.com/docs/devcontaine
 
 ## Usage
 
-Copy the desired directory (`host-credentials` or `credentials-per-devcontainer`) to `.devcontainer` in your project, then open the project in a Dev Container.
+Copy the desired directory (`claude-code-host-credentials` or `claude-code-isolated`) to `.devcontainer` in your project, then open the project in a Dev Container.
